@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
+		<article class="fitting">
+			<header>
+				<span class="icon usage"><img src="default.png" title="Imperium" /></span>
+				<span class="icon usage"><img src="default.png" title="EG" /></span>
+				<h1>Hull</h1>
+				<h2>Name</h2>
+				<span class="doctrine">Doctrine</span>
+				<span class="icon reimbursement"><img src="scc.png" title="SCC"></span>
+			</header>
+
+            <aside class="cargo">
+                <h3>Cargo</h3>
+            </aside>
+            <aside class="notes">
+                <h3>Notes</h3>
+            </aside>
+            <aside class="eft">
+                <h3>EFT</h3>
+				<pre>[Naglfar, Marcus Rosso's Naglfar]
+Damage Control II
+Gyrostabilizer II
+Gyrostabilizer II
+Gyrostabilizer II
+Tracking Enhancer II
+Tracking Enhancer II
+
+Adaptive Invulnerability Field II
+Adaptive Invulnerability Field II
+EM Ward Field II
+Thermal Dissipation Field II
+Sensor Booster II,Scan Resolution Script
+Tracking Computer II,Tracking Speed Script
+
+Siege Module I
+6x2500mm Repeating Cannon I,Arch Angel EMP XL
+6x2500mm Repeating Cannon I,Arch Angel EMP XL
+
+Capital Core Defense Field Extender I
+Capital Core Defense Field Extender I
+Capital Core Defense Field Extender I
+				</pre>
+            </aside>
+
+			<section class="fitting">
+				<section class="high">
+					<h3>High</h3>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+				</section>
+				<section class="med">
+					<h3>Med</h3>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+				</section>
+				<section class="low">
+					<h3>Low</h3>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+				</section>
+				<section class="subsystem">
+					<h3>Sub</h3>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+				</section>
+				<section class="drones">
+					<h3>Drn</h3>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+				</section>
+				<section class="ammo">
+					<h3>Chrg</h3>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+					<span class="slot"></span>
+				</section>
+                <section class="rig">
+                    <h3>Rigs</h3>
+                    <span class="slot"></span>
+                    <span class="slot"></span>
+                    <span class="slot"></span>
+                </section>
+			</section>
+            <section class="details">
+                <dl>
+                    <dt>Fitting Difficulty</dt>
+                    <dd>
+                    	<div>
+                            <span></span>
+                            <span></span>
+                       	    <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </dd>
+                    <dt>EVE Release</dt><dd>YC 118.1</dd>
+                </dl>
+                <nav>
+                    <a href="#eft">EFT</a>
+                    <a href="#notes">Notes</a>
+                    <a href="#cargo" class="current">Cargo</a>
+                </nav>
+            </section>
+		</article>
+		<script type="text/javascript">
+			(function() {
+				function onTabLinkClick(e) {
+					e.preventDefault();
+					var a = e.target.parentElement.parentElement.parentElement;
+					var sections = a.querySelectorAll(':scope > aside');
+					for (var k=0; k<sections.length; k++) {
+						var section = sections[k];
+						if (('#' + section.className) !== e.target.getAttribute('href')) {
+							section.style.display = 'none';
+						} else {
+							section.style.display = 'block';
+						}
+					}
+					var tabLinks = fitting.querySelectorAll('nav a');
+					for(var j=0; j<tabLinks.length; j++) {
+						tabLinks[j].className="";
+					}
+					e.target.className="current";
+				}
+			
+				var fittings = document.querySelectorAll("article.fitting");
+				for (var i=0; i<fittings.length; i++) {
+					var fitting = fittings[i];
+
+                    var sections = fitting.querySelectorAll(':scope > aside');
+                    for (var k=0; k<sections.length; k++) {
+                        sections[k].style.display = 'none';
+                    }
+
+					var tabLinks = fitting.querySelectorAll('nav a');
+					for(var j=0; j<tabLinks.length; j++) {
+						tabLinks[j].addEventListener('click', onTabLinkClick);
+                        if (tabLinks[j].className === 'current') {
+                            fitting.querySelector('aside.' + tabLinks[j].getAttribute('href').substr(1)).style.display = 'block';
+                        }
+					}
+				}
+			})();
+		</script>
+	</body>
+</html>

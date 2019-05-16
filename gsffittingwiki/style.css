@@ -1,0 +1,181 @@
+
+article.fitting { position: relative; }
+
+article.fitting * {
+    /*color: #1f1f1f;*/
+    border: 0 solid #aaa;
+    /* font-size: 14px; */
+    /* font-weight: normal; */
+}
+
+article.fitting:before, article:after { content: " "; display: table; }
+article.fitting:after { clear: both; }
+
+article.fitting { border: 1px solid;max-width: 750px;/* max-height: 300px; */ padding: 0;}
+
+article.fitting header { border-bottom-width: 1px; padding: 5px; margin: 0; height: 40px; line-height: 40px; vertical-align: middle; text-align: center }
+article.fitting header > * { display: inline-block; font-size: 18px; line-height: 40px; vertical-align: middle; padding: 0; margin: 0;}
+article.fitting header h1:after { content: ": "; }
+article.fitting header .icon { width: 32px; height: 32px; margin: 4px; }
+article.fitting header .icon img { width: 32px; height: 32px; }
+article.fitting header .icon.usage { float: left; }
+article.fitting header .icon.reimbursement { float: right; }
+article.fitting header .doctrine { float: right; }
+
+article.fitting aside {
+    border-width: 1px;
+    width: 280px;
+    min-height: 200px;
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+article.fitting aside h3 {
+    font-weight: normal;
+    font-size: 12px;
+    padding: 5px;
+    margin: 0;
+    border-bottom-width: 1px;
+}
+article.fitting aside p {
+    font-family: monospace;
+    font-size: 11px;
+    padding: 5px;
+    margin: 0;
+}
+
+article.fitting > section { overflow-y: auto; overflow-x: hidden; box-sizing: border-box; margin-top: 5px; padding-bottom: 10px; }
+
+article.fitting section.fitting section { margin-bottom: 5px; }
+article.fitting section.fitting section > * { height: 30px; line-height: 30px; font-size: 18px; vertical-align: middle; margin: 0; display: inline-block; }
+article.fitting section.fitting section h3 {
+    transform: rotate(-90deg);
+    font-weight: normal;
+    font-size: 10px;
+    border-width: 1px;
+    height: 18px;
+    width: 30px;
+    display: inline-block;
+    line-height: 18px;
+    text-align: center;
+    position: relative;
+    left: -1px;
+    margin-right: -6px;
+    text-transform: uppercase;
+}
+
+article.fitting section.fitting section span {
+    width: 30px;
+    border-width: 1px;
+    background: no-repeat center center;
+    background-size: 30px;
+}
+
+article.fitting section.fitting section span img {
+    width: 30px;
+    height: 30px;
+    vertical-align: baseline;
+}
+article.fitting section.fitting section.high h3,
+article.fitting section.fitting section.med h3,
+article.fitting section.fitting section.low h3 {
+    width: 46px;
+    margin-right: -22px;
+    left: -9px;
+    font-size: 13px;
+}
+
+article.fitting section.fitting section.high span,
+article.fitting section.fitting section.med span,
+article.fitting section.fitting section.low span {
+    width: 46px;
+    height: 46px;
+    background-size: 48px;
+}
+article.fitting section.fitting section.high span img,
+article.fitting section.fitting section.med span img,
+article.fitting section.fitting section.low span img {
+    width: 46px;
+    height: 46px;
+}
+
+article.fitting section.fitting section.high span:empty { background-image: url('high.png'); }
+article.fitting section.fitting section.med span:empty { background-image: url('med.png'); }
+article.fitting section.fitting section.low span:empty { background-image: url('low.png'); }
+article.fitting section.fitting section.rig span:empty { background-image: url('rig.png'); }
+article.fitting section.fitting section.subsystem span:nth-of-type(1):empty { background-image: url('sub_1.png'); }
+article.fitting section.fitting section.subsystem span:nth-of-type(2):empty { background-image: url('sub_2.png'); }
+article.fitting section.fitting section.subsystem span:nth-of-type(3):empty { background-image: url('sub_3.png'); }
+article.fitting section.fitting section.subsystem span:nth-of-type(4):empty { background-image: url('sub_4.png'); }
+article.fitting section.fitting section.subsystem span:nth-of-type(5):empty { background-image: url('sub_5.png'); }
+
+article.fitting section.details {
+    position: absolute;
+    top: 210px;
+    left: 261px;
+    font-size: 10pt;
+    width: 185px;
+    padding: 0;
+    margin: 0;
+}
+article.fitting section.details dl {
+    margin: 0;
+    padding: 0;
+}
+article.fitting section.details dd, section.details dt {
+    border-width: 1px;
+    display: block;
+    width: 100px;
+    padding: 3px;
+    margin: 0 0 5px 0;
+    height: 22px;
+    float: left;
+    font-size: 10px;
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+article.fitting section.details dl > dd {
+    border-left-width: 0;
+    width: 70px;
+}
+article.fitting section.details dd div {
+    width: 51px;
+    margin: auto;
+    border-width: 1px;
+    height: 14px;
+}
+article.fitting section.details dd div span {
+    width: 8px;
+    background: #1f1f1f;
+    height: 12px;
+    display: block;
+    float: left;
+    margin-right: 2px;
+    margin-top: 1px;
+}
+article.fitting section.details dd div span:first-child {
+    margin-left: 1px;
+}
+article.fitting section.details dd div span:nth-child(5) {
+    background: red;
+}
+
+article.fitting nav {}
+
+article.fitting nav a {
+    border-width: 1px;
+    text-decoration: none;
+    padding: 3px;
+    display: block;
+    float: right;
+    margin-left: 5px;
+}
+
+article.fitting nav a.current {
+    background: #f1f1f1;
+}
