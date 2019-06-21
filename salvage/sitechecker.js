@@ -7,13 +7,11 @@ let startProcessSites = (event) => {
     let inputs = Array.from(siteForm.querySelectorAll('textarea'))
         .concat(Array.from(siteForm.querySelectorAll('button')));
 
+    changeInputState(inputs, true); // Disable the inputs
 
-    // Disable the inputs
-    for (let t of inputs) {
-        t.disabled = true;
+    if (findSites(scanTextarea.value, bookmarksTextarea.value)) {
+        changeInputState(inputs, false); // Enable the inputs
     }
-
-    findSites(scanTextarea.value, bookmarksTextarea.value)
 };
 
 let findSites = (scan, bookmarks) => {
@@ -68,6 +66,15 @@ let findSites = (scan, bookmarks) => {
 
     let o = document.getElementsByTagName('output')[0];
     o.innerText = newSites_array + '<br>' + completedSites_array;
+
+    return true;
+};
+
+let changeInputState = (inputs, state) => {
+
+    for (let t of inputs) {
+        t.disabled = state;
+    }
 };
 
 let siteForm = document.getElementById('siteForm');
