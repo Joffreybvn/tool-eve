@@ -2,24 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Combat Site Checker</title>
+    <title>Salvage Site Checker</title>
 
     <link type="text/css" rel="stylesheet" href="style.css" />
 </head>
 <body>
 <form id="siteForm">
-    <div>
-        <label for="scan-textarea">Probe Scan copy</label>
-        <textarea id="scan-textarea" required></textarea>
-    </div>
-    <div>
-        <label for="bookmarks-textarea">Bookmarks copy</label>
-        <textarea id="bookmarks-textarea" required></textarea>
+    <div class="form-content">
+        <div class="textarea">
+            <label for="scan-textarea">Probe Scan copy</label>
+            <textarea id="scan-textarea" required></textarea>
+        </div>
+        <div class="textarea">
+            <label for="bookmarks-textarea">Bookmarks copy</label>
+            <textarea id="bookmarks-textarea" required></textarea>
+        </div>
     </div>
     <button type="submit" id="process">Process</button>
     <p>Contact: Nyco Di Valones</p>
 </form>
-<output></output>
+
+<div class="output">
+    <p>Result</p>
+    <div class="result">
+        <div class="to-salvage">
+            <p>To salvage:</p>
+            <div id="output-salvage"></div>
+        </div>
+        <div class="new-anomalies">
+            <p>New anomaly:</p>
+            <div id="output-anomaly"></div>
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript" src="sitechecker.js"></script>
 </body>

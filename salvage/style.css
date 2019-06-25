@@ -1,0 +1,65 @@
+
+html, body, form {
+    padding: 0;
+    border: 0;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    position: absolute;
+    height: auto;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 20px;
+    justify-content: space-between;
+}
+
+
+.form-content {
+    display: flex;
+    height: 70%;
+    justify-content: space-between;
+}
+
+#siteForm {
+    width: 69%;
+}
+
+.textarea {
+    width: 49%;
+}
+
+#siteForm, .textarea, .output  {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    height: 90%;
+}
+
+button {
+    height: 5%;
+}
+
+.output {
+    width: 29%;
+}
+
+.output p {
+    margin: 0;
+}
+
+.result {
+    border: 1px solid black;
+    height: 70%;
+    padding: 10px;
+}
+
+.to-salvage, .new-anomalies {
+    height: 50%;
+}

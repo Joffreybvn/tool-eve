@@ -17,18 +17,15 @@ let startProcessSites = (event) => {
 let findSites = (scan, bookmarks) => {
 
     scan = scan.split('\n');
+    console.log(scan);
     bookmarks = bookmarks.split('\n');
+    console.log(bookmarks);
 
     // Get the combat site list
     let scan_array = [];
 
     for (let i = 0; i < scan.length; i++) {
-
-        let data = scan[i].substring(0, 40);
-
-        if (data.slice(-6) === "combat") {
-            scan_array.push(data.slice(0, 7))
-        }
+        scan_array.push(scan[i].substring(0, 7));
     }
 
     console.log(scan_array);
@@ -64,8 +61,19 @@ let findSites = (scan, bookmarks) => {
         }
     }
 
-    let o = document.getElementsByTagName('output')[0];
-    o.innerText = newSites_array + '<br>' + completedSites_array;
+    // Print the sites to salvage
+    let output_salvage = document.getElementById('output-salvage');
+    if (completedSites_array.length === 0) {
+        completedSites_array = "Nothing"
+    }
+    output_salvage.innerText = '' + completedSites_array;
+
+    // Print the new anomalies
+    let output_anomaly = document.getElementById('output-anomaly');
+    if (newSites_array.length === 0) {
+        newSites_array = "Nothing"
+    }
+    output_anomaly.innerText = '' + newSites_array;
 
     return true;
 };
