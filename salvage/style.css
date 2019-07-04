@@ -41,7 +41,7 @@ body {
 }
 
 #siteForm {
-    width: 69%;
+    width: 65%;
 }
 
 .textarea {
@@ -64,7 +64,7 @@ textarea {
 }
 
 .output {
-    width: 29%;
+    width: 34%;
 }
 
 .output p {
@@ -88,7 +88,23 @@ table {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    border-spacing: 0;
+    cursor: pointer;
+    user-select: none;
     width: 100%;
+}
+
+tr:hover {
+    background: #e2e2e2;
+}
+
+.tr-selected {
+    background: #156b00;
+    color: #fff;
+}
+
+.tr-selected:hover {
+    background: #156000 !important;
 }
 
 .sort-buttons {
