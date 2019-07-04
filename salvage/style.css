@@ -1,0 +1,101 @@
+
+html, body, form {
+    padding: 0;
+    border: 0;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    position: absolute;
+    height: auto;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 20px;
+    justify-content: space-between;
+}
+
+
+.form-content {
+    display: flex;
+    height: 90%;
+    justify-content: space-between;
+}
+
+.form-button {
+    height: 10%;
+}
+
+.form-button button {
+    height: 60%;
+    width: 100%;
+}
+
+.form-button p {
+    padding: 0;
+    border: 0;
+    margin: 5px 0 0;
+}
+
+#siteForm {
+    width: 69%;
+}
+
+.textarea {
+    width: 49%;
+}
+
+#siteForm, .textarea, .output  {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    height: 3%;
+}
+
+textarea {
+    height: 95%;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.output {
+    width: 29%;
+}
+
+.output p {
+    margin: 0;
+    height: 3%;
+    font-weight: bolder;
+}
+
+.result {
+    border: 1px solid black;
+    height: 96%;
+    padding: 10px;
+    overflow: auto
+}
+
+.to-salvage, .new-anomalies {
+    min-height: 50%;
+}
+
+table {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.sort-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sort-buttons button {
+    width: 30%;
+}
